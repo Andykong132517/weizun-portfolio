@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Customer Data Cleaning & Analysis Portfolio - Weizun Kong</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f7fb;
+      color: #222;
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 16px 48px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    header h1 {
+      font-size: 1.9rem;
+      margin-bottom: 6px;
+    }
+    header p {
+      margin: 2px 0;
+      color: #555;
+    }
+    .tagline {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: #777;
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin-top: 32px;
+      margin-bottom: 10px;
+      border-left: 4px solid #4f46e5;
+      padding-left: 8px;
+    }
+    h3 {
+      font-size: 1.05rem;
+      margin-top: 16px;
+      margin-bottom: 6px;
+    }
+    p {
+      margin: 6px 0 10px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+      padding: 18px 20px;
+      margin-bottom: 18px;
+    }
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .pill {
+      font-size: 0.85rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #3730a3;
+    }
+    ul {
+      padding-left: 20px;
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+    li {
+      margin-bottom: 3px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 4px;
+      font-size: 0.9rem;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 6px 8px;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: left;
+    }
+    th {
+      background: #eef2ff;
+      font-weight: 600;
+    }
+    tfoot td {
+      font-weight: 600;
+      background: #f3f4f6;
+    }
+    .footer-note {
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-top: 24px;
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>Customer Data Cleaning & Analysis Portfolio</h1>
+      <p><strong>Weizun Kong</strong> – Data Entry & Banking Operations Candidate</p>
+      <p class="tagline">Practical Excel project demonstrating real-world data cleaning and basic analytical skills.</p>
+    </header>
+
+    <!-- Project Overview -->
+    <section class="card">
+      <h2>Project Overview</h2>
+      <p>
+        This project showcases a complete data cleaning and basic analysis workflow on a 40-record customer dataset.
+        The original data contained realistic issues such as inconsistent capitalization, messy phone formats, email
+        typos, mixed date formats, incomplete addresses, and missing membership information.
+      </p>
+      <p>
+        Using Microsoft Excel, I transformed the dataset into a clean, standardized version suitable for reporting and
+        simple analytics, then generated insights using PivotTables.
+      </p>
+      <div class="pill-row">
+        <span class="pill">Excel</span>
+        <span class="pill">Data Cleaning</span>
+        <span class="pill">Data Entry Accuracy</span>
+        <span class="pill">PivotTable Analysis</span>
+        <span class="pill">Banking Operations Support</span>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section>
+      <h2>Skills Demonstrated</h2>
+      <div class="card">
+        <h3>Data Cleaning & Transformation</h3>
+        <ul>
+          <li>Standardized names using <code>TRIM</code> and <code>PROPER</code> to fix extra spaces and inconsistent casing.</li>
+          <li>Normalized phone numbers to a North American format: <code>(XXX) XXX-XXXX</code>.</li>
+          <li>Cleaned and validated email addresses, removed spaces, and fixed common domain issues.</li>
+          <li>Unified dates of birth to ISO format <code>YYYY-MM-DD</code> using <code>SUBSTITUTE</code>, <code>DATEVALUE</code>, and <code>TEXT</code>.</li>
+          <li>Normalized addresses and handled unknown or incomplete values in a consistent way.</li>
+          <li>Categorized membership status into standardized values: <strong>Yes</strong>, <strong>No</strong>, <strong>Unknown</strong>.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Analytical Preparation & Reporting</h3>
+        <ul>
+          <li>Created derived fields such as <strong>Birth Year</strong> and <strong>Email Domain</strong> using functions like <code>YEAR</code> and <code>RIGHT / FIND</code>.</li>
+          <li>Built PivotTables to summarize customers by membership status, age (birth year), and email domain.</li>
+          <li>Interpreted results and documented key findings in a structured report.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Sample of Cleaned Data -->
+    <section>
+      <h2>Sample of Cleaned Customer Data</h2>
+      <div class="card">
+        <p>Below is a small sample of the cleaned dataset after all transformations (names, phones, emails, dates, addresses, and membership status standardized).</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Customer_ID</th>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>DOB</th>
+              <th>Address</th>
+              <th>Member_Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cust1000</td>
+              <td>Anna Kim</td>
+              <td>(236) 111-8888</td>
+              <td>michael@hotmail.com</td>
+              <td>2001-03-08</td>
+              <td>556 Pine Rd</td>
+              <td>Unknown</td>
+            </tr>
+            <tr>
+              <td>Cust1001</td>
+              <td>Lucas Kim</td>
+              <td>(604) 888-7777</td>
+              <td>anna..lee@gmail.com</td>
+              <td>2001-03-08</td>
+              <td>22 Queen St</td>
+              <td>Unknown</td>
+            </tr>
+            <tr>
+              <td>Cust1002</td>
+              <td>Mary Wang</td>
+              <td>(604) 888-7777</td>
+              <td>kevin123@gmail.com</td>
+              <td>1998-05-05</td>
+              <td>77 Sunset Blvd</td>
+              <td>Unknown</td>
+            </tr>
+            <tr>
+              <td>Cust1003</td>
+              <td>Mary Wang</td>
+              <td>(778) 999-2222</td>
+              <td>lucas@hotmail.com</td>
+              <td>2001-11-08</td>
+              <td>45 River Road</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Cust1004</td>
+              <td>Alice Lee</td>
+              <td>(604) 123-4567</td>
+              <td>sara@live.com</td>
+              <td>1999-03-01</td>
+              <td>Apt 3, 90 Hill Rd</td>
+              <td>Unknown</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- PivotTables -->
+    <section>
+      <h2>PivotTable Analysis</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>1. Member Status Distribution</h3>
+          <p>Summary of customer records by membership status.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Member_Status</th>
+                <th>Count</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>No</td><td>6</td></tr>
+              <tr><td>Unknown</td><td>18</td></tr>
+              <tr><td>Yes</td><td>16</td></tr>
+            </tbody>
+            <tfoot>
+              <tr><td>Grand Total</td><td>40</td></tr>
+            </tfoot>
+          </table>
+        </div>
+
+        <div class="card">
+          <h3>2. Birth Year Distribution</h3>
+          <p>Customers grouped by birth year, derived from cleaned date of birth.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Birth Year</th>
+                <th>Count</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1997</td><td>3</td></tr>
+              <tr><td>1998</td><td>12</td></tr>
+              <tr><td>1999</td><td>11</td></tr>
+              <tr><td>2000</td><td>1</td></tr>
+              <tr><td>2001</td><td>6</td></tr>
+              <tr><td>2003</td><td>4</td></tr>
+              <tr><td>2008</td><td>3</td></tr>
+            </tbody>
+            <tfoot>
+              <tr><td>Grand Total</td><td>40</td></tr>
+            </tfoot>
+          </table>
+        </div>
+
+        <div class="card">
+          <h3>3. Email Domain Distribution</h3>
+          <p>Frequency of email providers based on domain extracted from each email address.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Email Domain</th>
+                <th>Count</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>email.com</td><td>3</td></tr>
+              <tr><td>gmail.com</td><td>20</td></tr>
+              <tr><td>hotmail.com</td><td>12</td></tr>
+              <tr><td>live.com</td><td>5</td></tr>
+            </tbody>
+            <tfoot>
+              <tr><td>Grand Total</td><td>40</td></tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Insights -->
+    <section>
+      <h2>Key Insights & Takeaways</h2>
+      <div class="card">
+        <ul>
+          <li><strong>Member data gaps:</strong> A significant portion of customers are categorized as <em>Unknown</em> for membership status, suggesting that collection or entry processes could be improved.</li>
+          <li><strong>Younger demographic:</strong> Most customers were born between 1997 and 2001, indicating a younger customer base that may respond well to digital-first services or campaigns.</li>
+          <li><strong>Email providers:</strong> Gmail is the dominant email provider, followed by Hotmail and Live, which is useful for understanding communication channels and deliverability.</li>
+          <li><strong>Data quality improvement:</strong> The project significantly improved the reliability of the dataset by standardizing formats, resolving inconsistencies, and handling missing values, making it suitable for further analysis or operational use.</li>
+        </ul>
+      </div>
+    </section>
+
+    <p class="footer-note">
+      Prepared by <strong>Weizun Kong</strong>. This page is part of my portfolio for Data Entry, Banking Operations, and Analyst Assistant roles.
+    </p>
+  </div>
+</body>
+</html>
